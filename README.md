@@ -1,4 +1,5 @@
-omnom
-=====
+#omnom
 
-Demo application for the nemah gem
+Demo application for the [Nemah](https://github.com/Lavinia/Nemah) gem.
+
+You can find this app at https://omnomnemah.herokuapp.com.
