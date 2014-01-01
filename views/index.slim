@@ -1,32 +1,32 @@
 h1 Calculate Nutritional Needs for Your Horse
 
 form(method=:post)
-  label'(for=:weight) Weight in kg
-  input(name=:weight value=@weight)
-  br
+  .field
+    label'(for=:weight) Weight in kg
+    input(name=:weight value=@weight)
 
-  label'(for=:gender) Gender
-  select(name=:gender)
-    ==options_for_gender
-  br
+  .field
+    label'(for=:gender) Gender
+    select(name=:gender)
+      ==options_for_gender
 
-  label'(for=:feedability) How easily does your horse gain weight?
-  select(name=:feedability)
-    ==options_for_feedability
-  br
+  .field
+    label'(for=:feedability) Weight-gaining ability
+    select(name=:feedability)
+      ==options_for_feedability
 
-  h4 Workload
-  label'(for=:walk) Walk
-  input(name=:walk value=@walk)
-  br
+  h3 Workload
+  .field
+    label'(for=:walk) Walk
+    input(name=:walk value=@walk)
 
-  label'(for=:trot_and_canter) Trot and Canter
-  input(name=:trot_and_canter value=@trot_and_canter)
-  br
+  .field
+    label'(for=:trot_and_canter) Trot and Canter
+    input(name=:trot_and_canter value=@trot_and_canter)
 
-  label'(for=:days_per_week) Days per Week
-  input(name=:days_per_week value=@days_per_week)
-  br
+  .field
+    label'(for=:days_per_week) Days per Week
+    input(name=:days_per_week value=@days_per_week)
 
   input(type=:submit)
 
@@ -34,27 +34,7 @@ form(method=:post)
   h2 Minimum Required Needs
   .need
     ul
-      li
-        strong' Energy
-        =@need.energy
-      li
-        strong' Protein
-        =@need.protein
-      li
-        strong' Solids
-        =@need.solids
-      li
-        strong' Calcium
-        =@need.calcium
-      li
-        strong' Phosphor
-        =@need.phosphor
-      li
-        strong' Magnesium
-        =@need.magnesium
-      li
-        strong' Salt (NaCl)
-        =@need.salt
-      li
-        strong' Selenium
-        =@need.selenium
+      -specific_needs.each do |need|
+        li
+          strong=' need.to_s.capitalize
+          =@need.send need

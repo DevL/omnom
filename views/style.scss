@@ -1,0 +1,52 @@
+$indention: 10px;
+$field_width: 300px;
+$input_width: $field_width / 3;
+
+$background_colour: gainsboro;
+$title_colour: saddlebrown;
+$text_colour: black;
+
+body {
+  background: $background_colour;
+  color: $text_colour;
+  font-family: sans-serif;
+  width: 800px;
+  margin: 10px;
+  padding: 0px;
+}
+
+form {
+  .field {
+    display: block;
+    width: $field_width;
+    text-align: right;
+
+    label {
+      float: left;
+    }
+
+    input, select {
+      width: $input_width
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $title_colour;
+}
+
+.need {
+  ul {
+    padding-left: $indention;
+    list-style-type: none;
+
+    li {
+      width: $field_width - 2 * $indention;
+      text-align: right;
+
+      strong {
+        float: left;
+      }
+    }
+  }
+}

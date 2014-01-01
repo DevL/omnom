@@ -7,6 +7,10 @@ if development?
   require 'sinatra/reloader'
 end
 
+get '/style.css' do
+  scss :style
+end
+
 get '/' do
   get_or_default_params
 
@@ -39,6 +43,10 @@ def calculate_need
   workload = Nemah::Workload.new(walk: walk, trot_and_canter: trot_and_canter, days_per_week: days_per_week)
   horse = Nemah::Horse.new(weight: weight, gender: gender.to_sym, feedability: feedability.to_sym, workload: workload)
   @need = Nemah::Need.new(horse)
+end
+
+def specific_needs
+  [:energy, :protein, :solids, :calcium, :phosphor, :magnesium, :salt, :selenium]
 end
 
 def options_for_feedability
