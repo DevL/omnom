@@ -6,11 +6,13 @@ form(method=:post)
   br
 
   label'(for=:gender) Gender
-  input(name=:gender value=@gender)
+  select(name=:gender)
+    ==options_for_gender
   br
 
   label'(for=:feedability) How easily does your horse gain weight?
-  input(name=:feedability value=@feedability)
+  select(name=:feedability)
+    ==options_for_feedability
   br
 
   h4 Workload
