@@ -6,6 +6,8 @@ gem 'nemah', :git => 'https://github.com/Lavinia/Nemah.git'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sass'
+gem 'slim'
 
 group :development do
   gem 'byebug'

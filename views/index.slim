@@ -1,0 +1,58 @@
+h1 Calculate Nutritional Needs for Your Horse
+
+form(method=:post)
+  label'(for=:weight) Weight in kg
+  input(name=:weight value=@weight)
+  br
+
+  label'(for=:gender) Gender
+  input(name=:gender value=@gender)
+  br
+
+  label'(for=:feedability) How easily does your horse gain weight?
+  input(name=:feedability value=@feedability)
+  br
+
+  h4 Workload
+  label'(for=:walk) Walk
+  input(name=:walk value=@walk)
+  br
+
+  label'(for=:trot_and_canter) Trot and Canter
+  input(name=:trot_and_canter value=@trot_and_canter)
+  br
+
+  label'(for=:days_per_week) Days per Week
+  input(name=:days_per_week value=@days_per_week)
+  br
+
+  input(type=:submit)
+
+-if @need
+  h2 Minimum Required Needs
+  .need
+    ul
+      li
+        strong' Energy
+        =@need.energy
+      li
+        strong' Protein
+        =@need.protein
+      li
+        strong' Solids
+        =@need.solids
+      li
+        strong' Calcium
+        =@need.calcium
+      li
+        strong' Phosphor
+        =@need.phosphor
+      li
+        strong' Magnesium
+        =@need.magnesium
+      li
+        strong' Salt (NaCl)
+        =@need.salt
+      li
+        strong' Selenium
+        =@need.selenium
