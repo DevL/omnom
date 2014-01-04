@@ -1,4 +1,4 @@
-#omnom
+#OmNom
 
 Demo application for the [Nemah](https://github.com/Lavinia/Nemah) gem.
 
