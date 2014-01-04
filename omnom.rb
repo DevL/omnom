@@ -72,13 +72,3 @@ end
 def option_for(value, selected)
   %Q(<option value="#{value}"#{(value == selected) ? ' selected="selected"' : ''}>#{value}</option>)
 end
-
-module Nemah
-  module SpecificNeed
-    class AbstractNeed
-      def to_s
-        "#{min} #{unit}"
-      end
-    end
-  end
-end

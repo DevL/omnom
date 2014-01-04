@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/Lavinia/Nemah.git
-  revision: a91c3c99d11c435b456f5b631803e21bfba2068e
+  revision: 3634f110863b079293d41a8a23b784552e2b9aa0
   specs:
-    nemah (0.0.1)
+    nemah (0.1.1)
 
 GEM
   remote: https://rubygems.org/
