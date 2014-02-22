@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/Lavinia/Nemah.git
-  revision: 3634f110863b079293d41a8a23b784552e2b9aa0
-  specs:
-    nemah (0.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,6 +35,7 @@ GEM
     lumberjack (1.0.4)
     method_source (0.8.2)
     multi_json (1.8.2)
+    nemah (0.2.0)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -96,7 +91,7 @@ DEPENDENCIES
   foreman
   guard
   guard-rspec
-  nemah!
+  nemah (~> 0.2.0)
   rspec
   sass
   sinatra
