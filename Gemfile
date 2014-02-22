@@ -8,9 +8,11 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sass'
 gem 'slim'
+gem 'thin'
 
 group :development do
   gem 'byebug'
+  gem 'foreman'
   gem 'guard'
   gem 'guard-rspec'
   gem 'rspec'
