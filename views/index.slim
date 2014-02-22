@@ -28,6 +28,20 @@ form(method=:post)
     label'(for=:days_per_week) Days per Week
     input(name=:days_per_week value=@days_per_week)
 
+  h2 Available fodders
+  table
+    tr
+      th Fodder Name
+      th Amount
+      th Energy
+    tr
+      td
+        input(name=:name)
+      td
+        input(amount=:amount)
+      td
+        input(energy=:energy)
+
   input(type=:submit)
 
 -if @need
@@ -38,3 +52,10 @@ form(method=:post)
         li
           strong=' need.to_s.capitalize
           =@need.send need
+
+  h2 Current Rations
+  .ration
+    ul
+      li
+        strong Energy
+        ="#{@ration.total_energy} #{@need.energy.unit}"

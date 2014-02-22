@@ -35,7 +35,7 @@ GEM
     lumberjack (1.0.4)
     method_source (0.8.2)
     multi_json (1.8.2)
-    nemah (0.2.0)
+    nemah (0.3.0)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -91,7 +91,7 @@ DEPENDENCIES
   foreman
   guard
   guard-rspec
-  nemah (~> 0.2.0)
+  nemah (~> 0.3.0)
   rspec
   sass
   sinatra

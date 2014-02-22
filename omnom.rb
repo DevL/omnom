@@ -43,6 +43,7 @@ def calculate_need
   workload = Nemah::Workload.new(walk: walk, trot_and_canter: trot_and_canter, days_per_week: days_per_week)
   horse = Nemah::Horse.new(weight: weight, gender: gender.to_sym, feedability: feedability.to_sym, workload: workload)
   @need = Nemah::Need.new(horse)
+  @ration = Nemah::Ration.new(@need, Nemah::FodderList.new)
 end
 
 def specific_needs

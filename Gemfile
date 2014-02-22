@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.0'
 
-gem 'nemah', '~> 0.2.0'
+gem 'nemah', '~> 0.3.0'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
