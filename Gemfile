@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby File.read('.ruby-version').scan(/\d\.\d\.\d/).first
 
 gem 'nemah', '~> 0.3.0'
 
