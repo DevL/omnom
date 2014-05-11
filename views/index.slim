@@ -33,29 +33,34 @@ form(method=:post)
     tr
       th Fodder Name
       th Amount
-      th Energy
+      -specific_needs.each do |need|
+        th= need.capitalize
     tr
       td
         input(name=:name)
       td
-        input(amount=:amount)
-      td
-        input(energy=:energy)
+        input(name=:amount)
+      -specific_needs.each do |need|
+        td
+          input(name=need)
 
   input(type=:submit)
 
 -if @need
   h2 Minimum Required Needs
   .need
-    ul
+    table
       -specific_needs.each do |need|
-        li
-          strong=' need.to_s.capitalize
-          =@need.send need
+        tr
+          th=need.to_s.capitalize
+          td=@need.public_send(need).min.round(1)
+          td=@need.public_send(need).unit
 
   h2 Current Rations
   .ration
-    ul
-      li
-        strong Energy
-        ="#{@ration.total_energy} #{@need.energy.unit}"
+    table
+      -specific_needs.each do |nutrient|
+        tr
+          th=nutrient.capitalize
+          td=@ration.public_send("total_#{nutrient}").round(1)
+          td=@need.public_send(nutrient).unit

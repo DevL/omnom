@@ -37,13 +37,18 @@ def get_or_default_params
   @walk = params[:walk].to_i
   @trot_and_canter = params[:trot_and_canter].to_i
   @days_per_week = params[:days_per_week].to_i
+  nutrients = specific_needs.inject({}) do |hash, nutrient|
+    hash.merge({ nutrient => params[nutrient].to_f })
+  end
+  fodder = Nemah::Fodder.new(params[:name], nutrients)
+  @fodder_list = Nemah::FodderList.new(fodder => params[:amount].to_f)
 end
 
 def calculate_need
   workload = Nemah::Workload.new(walk: walk, trot_and_canter: trot_and_canter, days_per_week: days_per_week)
   horse = Nemah::Horse.new(weight: weight, gender: gender.to_sym, feedability: feedability.to_sym, workload: workload)
   @need = Nemah::Need.new(horse)
-  @ration = Nemah::Ration.new(@need, Nemah::FodderList.new)
+  @ration = Nemah::Ration.new(@need, @fodder_list)
 end
 
 def specific_needs
